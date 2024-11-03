@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+    <div class="col-5 mt-5 show-dresscard">
+        <div class="card-body">
+            <p>Added By : <i><%= dresscard.owner.username %></i></p>
+            <h2 class="card-title"><%= dresscard.title %></h2>
+            <h4 class="card-category">Category : <%= dresscard.category %></h4>
+            <h4 class="card-price">Price : &#8377; <%= dresscard.price.toLocaleString("en-IN") %></h4>
+        </div>
+        <% if(currUser&& currUser._id.equals(dresscard.owner._id)){ %>
+            <div class="d-flex">
+                <a href="/dresscards/<%= dresscard._id %>/edit"  class="btn btn-dark add-btn"><h3>&nbsp;Edit&nbsp;</h3></a>
+                &nbsp;&nbsp;&nbsp;
+                <form method="POST" action="/dresscards/<%= dresscard._id %>?_method=DELETE">
+                    <button class="btn btn-dark add-btn"><h3>Delete</h3></button>
+                </form>
+            </div>
+        <% } %>
+        
+    </div>
+    <div class="col-5 offset-2">
+        <img src="<%= dresscard.image %>"style="height: 25rem;">
+    </div>
+    </div>
+</body>

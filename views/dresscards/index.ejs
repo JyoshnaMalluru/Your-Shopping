@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <% for(let dresscard of allDressCards){ %>
+    <a href="/dresscards/<%=dresscard._id %>" class="dresscard-link">
+      <div class="card col me-3"style="height: 22rem;">
+          <img src="<%= dresscard.image %>" class="card-img-top"style="height: 20rem;">
+          <div class="card-body">
+            <b><div class="card-title"><%= dresscard.title %>&nbsp;<i class="fa-regular fa-heart like-icon"></i></div></b>
+          </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</body>

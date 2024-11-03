@@ -1,0 +1,116 @@
+body {
+    font-family: "Arima", system-ui;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    flex: 1;
+}
+.navbar {
+    background-color: #f4ACB7;
+    margin-bottom: 2rem;
+}
+.fa-shop{
+    color: #4a4e69;
+}
+.nav-link{
+    color: #4a4e69 !important;
+}
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #4a4e69;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links,.f-info-brand,.f-info-socials{
+    width: 100%;
+}
+.f-info-socials i{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-right: 0.7rem;
+}
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 0% !important;
+    border-radius: 0% !important;
+}
+.card-img-top{
+    width: 100% !important;
+    object-fit: cover !important;
+    /* margin-bottom: 0.5rem; */
+}
+
+.card-body {
+    padding: 0 !important;
+    justify-content: space-between;
+}
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.dresscard-link{
+    text-decoration: none;
+}
+.card-img-top:hover {
+    opacity: 0.8;
+    background-color : white;
+}
+
+.like-icon {
+    font-size: larger;
+}
+
+/* New */
+.add-btn {
+    background-color: #f4ACB7;
+    border: none !important;
+    text-align: center;   
+}
+.show-dresscard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;          
+    text-align: center;      
+}
+
+.navbar .dropdown-menu {
+    min-width: 50px; 
+    max-width: 100%;
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  .btn-group .dropdown-menu a.dropdown-item {
+    white-space: nowrap;
+    /* padding: 10px 20px; */
+    font-size: 15px;
+    color: #4a4e69;
+    /* background-color: #f4ACB7; */
+    /* border-radius: 100px !important; */
+  }
+  
+ .dropdown-toggle{
+    background-color: #4a4e69;
+    /* border-radius: 25%; */
+ }

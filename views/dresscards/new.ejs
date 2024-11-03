@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3>Upload New Dress</h3>
+    <form method="POST" action="/dresscards" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <lable for="title" class="form-label">Title</lable>
+            <input name="dresscard[title]" placeholder="enter DressName"class="form-control" type="text" required >
+        </div>
+        <div class="mb-3">
+            <lable for="image" class="form-label">Upload Image</lable>
+            <input name="dresscard[image]" placeholder="enter URL/Link" class="form-control"type="file" required>
+            <div class="invalid-feedback">Please enter a valid link for image</div>
+        </div>
+        <div class="mb-3">
+            <lable for="category" class="form-label">Category</lable>
+            <div class="category">
+                <select id="categorySelect" name="dresscard[category]" class="form-control" required>
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="women">Women</option>
+                  <option value="men">Men</option>
+                  <option value="girl">Girl</option>
+                  <option value="boy">Boy</option>
+                </select>
+                <div class="invalid-feedback">Please enter a valid category</div>
+            </div>
+        </div>
+       <div class="mb-3">
+        <lable for="price" class="form-label">Price</lable>
+        <input name="dresscard[price]" placeholder="600"class="form-control" required>
+        <div class="invalid-feedback">Please enter a valid price</div>
+       </div>
+        <button class="btn btn-dark add-btn">Add</button>
+        <br/><br/>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
