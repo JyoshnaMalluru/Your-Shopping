@@ -10,7 +10,7 @@ const upload = multer({storage})
 router
     .route("/")
     .get(wrapAsync(dresscardController.index))
-    .post(isLoggedIn,upload.single('dresscard[image]'),validateDressCard,wrapAsync(dresscardController.create));
+    .post(isLoggedIn,upload.single('dresscard[image]'),wrapAsync(dresscardController.create));
    
 //New route
 router.get("/new",isLoggedIn,wrapAsync(dresscardController.new));
@@ -18,7 +18,7 @@ router.get("/new",isLoggedIn,wrapAsync(dresscardController.new));
 router
     .route("/:id")
     .get(wrapAsync(dresscardController.show))
-    .put(validateDressCard,isOwner,wrapAsync(dresscardController.update))
+    .put(isLoggedIn,isOwner,upload.single('dresscard[image]'),validateDressCard,wrapAsync(dresscardController.update))
     .delete(isLoggedIn,isOwner,wrapAsync(dresscardController.delete));
 
 // Edit Route

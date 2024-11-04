@@ -1,4 +1,4 @@
-const DressCard = require("../models/dresscard");
+const DressCard = require("../models/dresscard.js");
 
 module.exports.index = async(req,res,next)=> {
     const allDressCards = await DressCard.find({});
@@ -22,11 +22,11 @@ module.exports.show = async(req,res,next) => {
 module.exports.create = async(req,res,next)=>{
         let url = req.file.path;
         let filename = req.file.filename;
-        // const newDressCard = new DressCard(req.body.dresscard);
-        console.log(url,"..",filename);
-        // newDressCard.owner = req.user._id;
-        // newDressCard.image = {url,filename};
-        // await newDressCard.save();
+        const newDressCard = new DressCard(req.body.dresscard);
+        // console.log(url,"..",filename);
+        newDressCard.owner = req.user._id;
+        newDressCard.image = {url,filename};
+        await newDressCard.save();
         req.flash("success","New DressCard added!");
         res.redirect("/dresscards");
 };
@@ -44,7 +44,13 @@ module.exports.edit = async(req,res)=>{
 
 module.exports.update = async(req,res)=>{
     let {id} = req.params;
-    await DressCard.findByIdAndUpdate(id,{...req.body.dresscard});
+    let dresscard = await DressCard.findByIdAndUpdate(id,{...req.body.dresscard});
+    if(typeof req.file !== "undefined"){
+        let url = req.file.path;
+        let filename = req.file.filename;
+        dresscard.image = {url,filename};
+        await dresscard.save();
+    }
     req.flash("success","DressCard Updated!");
     res.redirect(`/dresscards/${id}`);
 };

@@ -3,15 +3,14 @@
     <div class="row">
         <div class="col-8 offset-2">
     <h3>Edit DressCard</h3>
-    <form method="POST" action="/dresscards/<%= dresscard._id %>?_method=PUT" novalidate class="needs-validation">
+    <form method="POST" action="/dresscards/<%= dresscard._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
         <div class="mb-3">
             <lable for="title" class="form-label">Title</lable>
             <input name="dresscard[title]" value="<%= dresscard.title %>" type="text" class="form-control" required>
         </div>
         <div class="mb-3">
-            <lable for="image" class="form-label">Image URL</lable>
-            <input name="dresscard[image]" value="<%= dresscard.image %>" type="text" class="form-control" required>
-            <div class="invalid-feedback">Please enter a valid link for image</div>
+            <lable for="image" class="form-label">Upload New Image</lable>
+            <input name="dresscard[image]"  type="file" class="form-control">
         </div>
         <div class="mb-3">
             <lable for="category" class="form-label">Category</lable>
