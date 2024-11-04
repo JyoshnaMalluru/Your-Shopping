@@ -1,6 +1,68 @@
 <% layout("/layouts/boilerplate") %>
+<style>
+  #filters{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filter{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+  }
+  .filter :hover{
+    opacity: 0.7;
+  }
+  .filter img {
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .filter p{
+    padding: 5px;
+    margin: 0;
+  } 
+</style>
 <body>
-    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <div id="filters">
+      <div class="filter">
+        <img src="/womenlogo.webp" alt="women">
+        <p> Women </p>
+      </div>
+      <div class="filter">
+        <img src="/men logo.jpg" alt="men">
+        <p> Men </p>
+      </div>
+      <div class="filter">
+        <img src="/girllogo.jfif" alt="girl">
+        <p> Girls </p>
+      </div>
+      <div class="filter">
+        <img src="/boylogo.jfif" alt="Boy">
+        <p>Boys</p>
+      </div>
+      <div class="filter">
+        <img src="/kidslogo.webp" alt="Kids">
+        <p>Kids</p>
+      </div>
+      <div class="filter">
+        <img src="/allfashion.webp" alt="All">
+        <p>All</p>
+      </div>
+      <div class="dropdown-center">
+        <button class="btn btn-secondary dropdown-toggle" style="background-color: white;color: black; height: 50px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Price
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">High to Low</a></li>
+          <li><a class="dropdown-item" href="#">Low to High</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 mt-2">
     <% for(let dresscard of allDressCards){ %>
     <a href="/dresscards/<%=dresscard._id %>" class="dresscard-link">
       <div class="card col me-3"style="height: 22rem;">

@@ -1,31 +1,39 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><h1><i class="fa-solid fa-shop"></i></h1></a>
+      <a class="navbar-brand mt-2" href="/dresscards"><h2><i class="fa-solid fa-shop"></i></h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- <a class="nav-link" href="/">Home</a> -->
-          <a class="nav-link" href="/dresscards"><h1>Your Shopping</h1></a>
-          <a class="nav-link mt-4" href="/"><h5><i class="fa-regular fa-heart"></i>&nbsp;Wishlist</h5></a>
-          <a class="nav-link mt-4" href="/dresscards/new"><h5><i class="fa-solid fa-camera"></i>&nbsp;Upload</h5></a>
+        <div class="d-flex w-100 justify-content-between">
+            <div class="navbar-nav">
+              <a class="nav-link mt-2" href="/dresscards"><h2><b>Your Shopping</b></h2></a>
+            </div>
+            <form class="d-flex search" role="search">
+              <input class="form-control search-input" type="search" placeholder="Search by category/name" aria-label="Search">
+              <button class="btn btn-outline search-btn" style="background-color: #4a4e69;color: white;" type="submit">Search</button>
+            </form>
+            <div class="d-flex align-items-center">
+              <div class="icons d-flex mt-2">
+                <a class="nav-link" href="/"><b><i class="fa-regular fa-heart"></i>&nbsp;Wishlist</b></a>&nbsp;&nbsp;&nbsp;
+                <a class="nav-link" href="/dresscards/new"><b><i class="fa-solid fa-camera"></i>&nbsp;Upload</b></a>
+              </div>
+            <div class="btn-group ms-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                &nbsp;&nbsp;<i class="fa-regular fa-user"></i>&nbsp;&nbsp;&nbsp;
+              </button>
+              <ul class="dropdown-menu">
+                <% if(!currUser){ %>
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                  <li><a class="dropdown-item" href="/signup">SignUp</a></li>
+                <% } %>
+                <% if(currUser){ %>
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <% } %> 
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="btn-group">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
-          &nbsp;&nbsp;<i class="fa-regular fa-user"></i>&nbsp;&nbsp;&nbsp;
-        </button>
-        <ul class="dropdown-menu">
-          <% if(!currUser){ %>
-            <li><a class="dropdown-item" href="/login">Login</a></li>
-            <li><a class="dropdown-item" href="/signup">SignUp</a></li>
-          <% } %>
-          <% if(currUser){ %>
-            <li><a class="dropdown-item" href="/logout">Logout</a></li>
-          <% } %>
-          
-        </ul>
       </div>
     </div>
   </nav>

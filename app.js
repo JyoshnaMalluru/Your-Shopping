@@ -37,6 +37,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.static(path.join(__dirname,"/images")));
 const sessionOptions ={
     secret:"mysupersecretcode",
     resave:false,
@@ -47,9 +48,9 @@ const sessionOptions ={
         httpOnly:true,
     }
 }
-app.get("/",(req,res)=>{
-    res.send("Hi,I am root");
-})
+// app.get("/",(req,res)=>{
+//     res.send("Hi,I am root");
+// })
 
 app.use(session(sessionOptions));
 app.use(flash());

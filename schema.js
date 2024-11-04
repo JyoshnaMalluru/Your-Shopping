@@ -6,6 +6,11 @@ module.exports.dresscardSchema = Joi.object({
         category:Joi.string().required(),
         image:Joi.string().required(),
         price:Joi.number().required().min(0),
-        // like:Joi.boolean().required()
+        image:{
+            url:Joi.string().allow("", null),
+            filename:"default_name"
+        }
+        //like:Joi.boolean().required()
+
     }).required()
 });

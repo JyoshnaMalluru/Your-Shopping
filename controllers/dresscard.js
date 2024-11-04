@@ -39,7 +39,9 @@ module.exports.edit = async(req,res)=>{
         req.flash("error","DressCard you requested for does not exist");
         res.redirect("/dresscards")
     }
-    res.render("dresscards/edit.ejs",{dresscard});
+    let originalImageUrl = dresscard.image.url;
+    originalImageUrl = originalImageUrl.replace("/upload","/upload/h_300,w_250")
+    res.render("dresscards/edit.ejs",{dresscard,originalImageUrl});
 };
 
 module.exports.update = async(req,res)=>{

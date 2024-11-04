@@ -9,7 +9,7 @@ body {
 }
 .navbar {
     background-color: #f4ACB7;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .fa-shop{
     color: #4a4e69;
@@ -103,14 +103,27 @@ body {
   
   .btn-group .dropdown-menu a.dropdown-item {
     white-space: nowrap;
-    /* padding: 10px 20px; */
     font-size: 15px;
     color: #4a4e69;
-    /* background-color: #f4ACB7; */
-    /* border-radius: 100px !important; */
   }
   
  .dropdown-toggle{
-    background-color: #4a4e69;
-    /* border-radius: 25%; */
+    background-color: #f4ACB9;
+    color: #4a4e69;
+    border-width: 2px;
+    font-weight: 600;
  }
+
+ .search {
+    margin-top: 13px;
+    height: 40px;
+ }
+
+.search-input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.search-btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
