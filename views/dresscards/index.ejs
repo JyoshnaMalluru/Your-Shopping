@@ -25,6 +25,11 @@
     padding: 5px;
     margin: 0;
   } 
+  .card-body{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+  }
 </style>
 <body>
     <div id="filters">
@@ -66,9 +71,9 @@
     <% for(let dresscard of allDressCards){ %>
     <a href="/dresscards/<%=dresscard._id %>" class="dresscard-link">
       <div class="card col me-3"style="height: 22rem;">
-          <img src="<%= dresscard.image.url %>" class="card-img-top"style="height: 20rem;">
+            <img src="<%= dresscard.image.url %>" class="card-img-top"style="height: 20rem;">
           <div class="card-body">
-            <b><div class="card-title"><%= dresscard.title %>&nbsp;<i class="fa-regular fa-heart like-icon"></i></div></b>
+              <div class="card-title"><%= dresscard.title %></div>
           </div>
       </div>
     </a>

@@ -7,6 +7,7 @@
             <h2 class="card-title"><%= dresscard.title %></h2>
             <h4 class="card-category">Category : <%= dresscard.category %></h4>
             <h4 class="card-price">Price : &#8377; <%= dresscard.price.toLocaleString("en-IN") %></h4>
+            <button class="btn btn-outline mb-3" style="background-color: #4a4e69;color: white;">Add to Wishlist</button>
         </div>
         <% if(currUser&& currUser._id.equals(dresscard.owner._id)){ %>
             <div class="d-flex">
