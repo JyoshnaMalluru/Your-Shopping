@@ -56,7 +56,25 @@ module.exports.update = async(req,res)=>{
     req.flash("success","DressCard Updated!");
     res.redirect(`/dresscards/${id}`);
 };
+module.exports.category = async(req,res)=>{
+    let {category} = req.params;
+    let allDressCards = await DressCard.find({category:category});
+    // console.log(allDressCards);
+    res.render("dresscards/index.ejs",{allDressCards});
+}
 
+module.exports.search = async(req,res) =>{
+    let type = req.query.q;
+    let allDressCards = await DressCard.find({title:type});
+    console.log(allDressCards);
+    res.render("dresscards/index.ejs",{allDressCards});
+}
+module.exports.sort = async (req, res) => {
+    console.log('Sort option:', req.query.sort);
+    const sortOption = req.query.sort === 'asc' ? 1 : -1;
+    const allDressCards = await DressCard.find().sort({ price: sortOption });
+    res.render('dresscards', { allDressCards });
+  };
 module.exports.delete = async(req,res)=>{
     let {id} = req.params;
     let deleteDressCard = await DressCard.findByIdAndDelete(id);

@@ -9,11 +9,15 @@ const {storage} = require("../cloudConfig.js");
 const upload = multer({storage})
 router
     .route("/")
+    .get(wrapAsync(dresscardController.sort))
     .get(wrapAsync(dresscardController.index))
     .post(isLoggedIn,upload.single('dresscard[image]'),validateDressCard,wrapAsync(dresscardController.create));
    
 //New route
+
 router.get("/new",isLoggedIn,wrapAsync(dresscardController.new));
+router.get("/category/:category",wrapAsync(dresscardController.category));
+router.get("/search/:title",wrapAsync(dresscardController.search));
 
 router
     .route("/:id")
@@ -23,5 +27,6 @@ router
 
 // Edit Route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(dresscardController.edit));
+
 
 module.exports = router;

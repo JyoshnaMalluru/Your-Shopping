@@ -13,7 +13,7 @@
     align-items: center;
     text-align: center;
   }
-  .filter :hover{
+  .filter:hover{
     opacity: 0.7;
   }
   .filter img {
@@ -25,6 +25,10 @@
     padding: 5px;
     margin: 0;
   } 
+  #filters a{
+    text-decoration: none;
+    color: #4a4e69;
+  }
   .card-body{
     display: flex;
     justify-content: space-around;
@@ -33,37 +37,49 @@
 </style>
 <body>
     <div id="filters">
-      <div class="filter">
-        <img src="/womenlogo.webp" alt="women">
-        <p> Women </p>
-      </div>
-      <div class="filter">
-        <img src="/men logo.jpg" alt="men">
-        <p> Men </p>
-      </div>
-      <div class="filter">
-        <img src="/girllogo.jfif" alt="girl">
-        <p> Girls </p>
-      </div>
-      <div class="filter">
-        <img src="/boylogo.jfif" alt="Boy">
-        <p>Boys</p>
-      </div>
-      <div class="filter">
-        <img src="/kidslogo.webp" alt="Kids">
-        <p>Kids</p>
-      </div>
-      <div class="filter">
-        <img src="/allfashion.webp" alt="All">
-        <p>All</p>
-      </div>
+      <a href="/dresscards/category/women">
+        <div class="filter">
+          <img src="/womenlogo.webp" alt="women">
+          <p> Women </p>
+        </div>
+      </a>
+      <a href="/dresscards/category/men">
+        <div class="filter">
+          <img src="/men logo.jpg" alt="men">
+          <p> Men </p>
+        </div>
+      </a>
+      <a href="/dresscards/category/girl">
+        <div class="filter">
+          <img src="/girllogo.jfif" alt="girl">
+          <p> Girls </p>
+        </div>
+      </a>
+      <a href="/dresscards/category/boy">
+        <div class="filter">
+          <img src="/boylogo.jfif" alt="Boy">
+          <p>Boys</p>
+        </div>
+      </a>
+      <a href="/dresscards">
+        <div class="filter">
+          <img src="/kidslogo.webp" alt="Kids">
+          <p>Kids</p>
+        </div>
+      </a>
+      <a href="/dresscards">
+        <div class="filter">
+          <img src="/allfashion.webp" alt="All">
+          <p>All</p>
+        </div>
+      </a>
       <div class="dropdown-center">
         <button class="btn btn-secondary dropdown-toggle" style="background-color: white;color: black; height: 50px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Price
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">High to Low</a></li>
-          <li><a class="dropdown-item" href="#">Low to High</a></li>
+          <li><a class="dropdown-item" href="/dresscards?sort=desc">High to Low</a></li>
+          <li><a class="dropdown-item" href="/dresscards?sort=asc">Low to High</a></li>
         </ul>
       </div>
     </div>
