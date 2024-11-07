@@ -7,7 +7,7 @@
             <h2 class="card-title"><%= dresscard.title %></h2>
             <h4 class="card-category">Category : <%= dresscard.category %></h4>
             <h4 class="card-price">Price : &#8377; <%= dresscard.price.toLocaleString("en-IN") %></h4>
-            <button class="btn btn-outline mb-3" style="background-color: #4a4e69;color: white;">Add to Wishlist</button>
+            <button class="btn btn-outline mb-3" onclick="addToWishlist('<%= dresscard._id %>')" style="background-color: #4a4e69;color: white;"><%= dresscard.like ? "Remove from Wishlist" : "Add to Wishlist" %></button>
         </div>
         <% if(currUser&& currUser._id.equals(dresscard.owner._id)){ %>
             <div class="d-flex">
@@ -25,3 +25,15 @@
     </div>
     </div>
 </body>
+<script>
+    function addToWishlist(dressCardId) {
+    fetch(`/dresscards/${dressCardId}/wishlist`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ like: true }),
+    })
+    .catch(error => console.error("Error:", error));
+}
+</script>

@@ -7,6 +7,8 @@ const dresscardController = require("../controllers/dresscard.js");
 const multer  = require('multer')
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage})
+const flash = require("connect-flash");
+
 router
     .route("/")
     .get(wrapAsync(dresscardController.sort))
@@ -18,7 +20,7 @@ router
 router.get("/new",isLoggedIn,wrapAsync(dresscardController.new));
 router.get("/category/:category",wrapAsync(dresscardController.category));
 router.get("/search/:title",wrapAsync(dresscardController.search));
-
+router.get("/wishlist",wrapAsync(dresscardController.wishlist));
 router
     .route("/:id")
     .get(wrapAsync(dresscardController.show))
@@ -27,6 +29,6 @@ router
 
 // Edit Route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(dresscardController.edit));
-
+router.put("/:id/wishlist",wrapAsync(dresscardController.addlike));
 
 module.exports = router;

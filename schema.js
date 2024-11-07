@@ -9,8 +9,8 @@ module.exports.dresscardSchema = Joi.object({
         image:{
             url:Joi.string().allow("", null),
             filename:"default_name"
-        }
-        //like:Joi.boolean().required()
+        },
+        like:Joi.boolean()
 
     }).required()
 });

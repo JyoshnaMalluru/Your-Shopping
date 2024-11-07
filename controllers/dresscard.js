@@ -1,4 +1,5 @@
 const DressCard = require("../models/dresscard.js");
+const flash = require("connect-flash");
 
 module.exports.index = async(req,res,next)=> {
     const allDressCards = await DressCard.find({});
@@ -17,6 +18,31 @@ module.exports.show = async(req,res,next) => {
         res.redirect("/dresscards")
     }
     res.render("dresscards/show.ejs",{dresscard});
+};
+module.exports.addlike = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const dresscard = await DressCard.findById(id);
+        if (!dresscard) {
+            return res.status(404).json({ success: false, message: "Dress card not found" });
+        }
+
+        if (dresscard.like) {
+            dresscard.like = false;
+            console.log(dresscard)
+            await dresscard.save();
+            req.flash("error", "Removed from Wishlist!");
+        } else {
+            dresscard.like = true;
+            console.log(dresscard);
+            await dresscard.save();
+            req.flash("success", "Added to Wishlist!");
+        }
+        res.redirect(`/dresscards/${id}`);
+    } catch (error) {
+        console.error("Error updating like:", error);
+        res.status(500).json({ success: false, message: "Internal server error" });
+    }
 };
 
 module.exports.create = async(req,res,next)=>{
@@ -69,12 +95,18 @@ module.exports.search = async(req,res) =>{
     console.log(allDressCards);
     res.render("dresscards/index.ejs",{allDressCards});
 }
+module.exports.wishlist = async(req,res) =>{
+    let allDressCards = await DressCard.find({like:true});
+    // console.log(allDressCards);
+    res.render("dresscards/index.ejs",{allDressCards});
+}
 module.exports.sort = async (req, res) => {
-    console.log('Sort option:', req.query.sort);
+    // console.log('Sort option:', req.query.sort);
     const sortOption = req.query.sort === 'asc' ? 1 : -1;
     const allDressCards = await DressCard.find().sort({ price: sortOption });
     res.render('dresscards', { allDressCards });
   };
+
 module.exports.delete = async(req,res)=>{
     let {id} = req.params;
     let deleteDressCard = await DressCard.findByIdAndDelete(id);
