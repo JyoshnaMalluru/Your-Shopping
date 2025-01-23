@@ -1,6 +1,6 @@
 const sampleDressCards = [
         {
-            title : "Plain Shirt",
+            title : "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0IidssgGNXDzMDOMJXL3qq-MQdpCZpZLnw&s",
@@ -10,7 +10,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Floral Maxi Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM2HZeRfbGqcup_bsH0w8iReL6Fe65VlAGow&s",
@@ -20,7 +20,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Casual Blazer",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKnA58NHSNkPfxGrXzVZwSK_BwWUMQzY-5JA&s",
@@ -30,7 +30,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "A-Line Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA-eS9YPKbmmp5fxIHyA0Welo6ctp_mtkJTg&s",
@@ -40,7 +40,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Denim Jacket",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRfpgo76S1B6HPWeFHzocLINOSKE2vaEpDFg&s",
@@ -50,7 +50,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Embroidered Kurti",
+            title: "kurti",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYxX99qtukFQjDIYzRJDtodssYJywTmqjKkw&s",
@@ -60,7 +60,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Checked Shirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxKtSv-QVZIL2isUdZvecKmPtfSec7h88sKg&s",
@@ -70,7 +70,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Party Gown",
+            title: "gown",
             image : {
                 filename : "dresscardimage",
                 url :  "https://s.alicdn.com/@sc04/kf/H3dfb69721fdc40b3b558d34b1c1e779bR.jpg_300x300.jpg",
@@ -80,7 +80,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Tuxedo Suit",
+            title: "suit",
             image : {
                 filename : "dresscardimage",
                 url :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2hn3A0jow-UzKdp9VRdtb9KCz2Hb3MOYVg&s",
@@ -90,7 +90,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Anarkali Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2l56uofOAGGAaLYV5_yu6vJRHihrCx9gYuQ&s",
@@ -100,7 +100,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Sweatshirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFEafE95kHhjU3kexB8F7Xfu4plxKoVRNOg&s",
@@ -110,7 +110,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Printed Sundress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDKenu3rUrgQqGD4a8G3xgqXjoN5AIv0lTQ&s",
@@ -120,7 +120,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Leather Jacket",
+            title: "jacket",
             image : {
                 filename : "dresscardimage",
                 url :  "https://www.jeanswholesaler.in/2632-large_default/royal-spider-brown-pure-leather-jacket-for-men-rs-l004.jpg",
@@ -130,7 +130,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Polka Dot Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEzqKhKIccPkHphnWKKte4N47nh-IRyhT0w&s",
@@ -140,7 +140,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Hooded Sweatshirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBdH_iVWRMSO-qRM-pdPeWAKYc9wPBrPUQ1g&s",
@@ -150,7 +150,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Pleated Midi Skirt",
+            title: "skirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://cdn.mandco.com/Images/ProductImages/Big/dfb8f57b-6919-4c_550233_A.jpg",
@@ -160,7 +160,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Linen Shirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://i.ebayimg.com/images/g/lYQAAOSw4T9mq1w9/s-l1200.jpg",
@@ -170,7 +170,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Ruffle Sleeve Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://softsensbaby.com/cdn/shop/files/1_a6af9a33-b847-40d7-a8c6-476651aa13ab_300x300.jpg?v=1717499568",
@@ -180,7 +180,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Bomber Jacket",
+            title: "jacket",
             image : {
                 filename : "dresscardimage",
                 url :   "https://assets.ajio.com/medias/sys_master/root/20231106/Xhel/65490bc4ddf77915197246df/-473Wx593H-441769597-rust-MODEL.jpg",
@@ -190,7 +190,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Silk Saree",
+            title: "saree",
             image : {
                 filename : "dresscardimage",
                 url :  "https://utsarees.in/cdn/shop/files/Heavy_Mysore_Crape_Silk_Saree_with_Brocade_Blouse.22.jpg?v=1724747560&width=1445",
@@ -200,7 +200,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "V-Neck T-Shirt",
+            title: "t-shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLVCvdlxVa5V1lmv3Yho9AwBf711Yja1ROA&s",
@@ -210,7 +210,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Princess Ball Gown",
+            title: "gown",
             image : {
                 filename : "dresscardimage",
                 url :   "https://image.made-in-china.com/202f0j00vCybnoKBNNcV/Baby-Girl-Birthday-Party-Princess-Dress-Kids-Formal-Pageant-Ball-Gown.jpg",
@@ -220,7 +220,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Plaid Shirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://m.media-amazon.com/images/I/81g88cW94cL._AC_UY1100_.jpg",
@@ -230,7 +230,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Off-Shoulder Top",
+            title: "top",
             image : {
                 filename : "dresscardimage",
                 url :   "https://5.imimg.com/data5/SF/TQ/FA/SELLER-91278754/designer-tops.jpg",
@@ -240,7 +240,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Chino Pants",
+            title: "pant",
             image : {
                 filename : "dresscardimage",
                 url :  "https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1386707_lifestyle?$rl_4x5_pdp$",
@@ -250,7 +250,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Denim Overalls",
+            title: "jacket",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGBLkbfnZb7KHGJ2IChpksjiVOetFpNEszNA&s",
@@ -260,7 +260,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Tracksuit",
+            title: "suit",
             image : {
                 filename : "dresscardimage",
                 url :  "https://assets.ajio.com/medias/sys_master/root/20230707/YIBv/64a839e6eebac147fc5d6775/-473Wx593H-410353062-mediumgreyheather-MODEL.jpg",
@@ -270,7 +270,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Tunic Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-MvaFMfKabGIqbYkKp-C43tqlEhS8Z7uQpw&s",
@@ -280,7 +280,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Polo Shirt",
+            title: "shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://m.media-amazon.com/images/I/71-9wxDGjZL._AC_UY1100_.jpg",
@@ -290,7 +290,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Sequin Party Dress",
+            title: "dress",
             image : {
                 filename : "dresscardimage",
                 url : "https://ae01.alicdn.com/kf/Sed944b1f8a0f4532b76b4e4dd04e222bR/Princess-Evening-Luxurious-Party-Dress-for-Girls-Kids-Outfit-Sequin-Short-Sleeve-Ball-Gown-Children-Infant.jpg",
@@ -300,7 +300,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "Graphic T-Shirt",
+            title: "t shirt",
             image : {
                 filename : "dresscardimage",
                 url :  "https://adimanav.com/cdn/shop/products/chote-karyakarte.jpg?v=1703577117",

@@ -31,7 +31,6 @@ module.exports.saveRedirectUrl = (req,res,next) => {
 module.exports.isOwner = async(req,res,next) => {
     let {id} = req.params;
     let dresscard = await DressCard.findById(id);
-    // console.log(dresscard);
     if(!dresscard.owner.equals(res.locals.currUser._id.toString())){
         req.flash("error","You don't have to permission to edit");
         return res.redirect(`/dresscards/${id}`);

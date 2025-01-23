@@ -9,8 +9,8 @@
             <div class="navbar-nav">
               <a class="nav-link mt-2" href="/dresscards"><h2><b>Your Shopping</b></h2></a>
             </div>
-            <form  method="GET" action="/dresscards/search" class="d-flex search" role="search">
-              <input class="form-control search-input" id="search" name="data" type="search" placeholder="Search by category/name" aria-label="Search">
+            <form  method="GET" id="searchForm" class="d-flex search" role="search">
+              <input class="form-control search-input" id="searchBar" name="data" type="search" placeholder="Search here" aria-label="Search">
               <button class="btn btn-outline search-btn" id="search-btn" style="background-color: #4a4e69;color: white;" type="submit">Search</button>
             </form>
             <div class="d-flex align-items-center">
@@ -37,3 +37,17 @@
       </div>
     </div>
   </nav>
+<script>
+  const form = document.getElementById('searchForm');
+  const searchBar = document.getElementById('searchBar');
+  form.addEventListener('submit',(event) =>{
+    event.preventDefault();
+    const searchQuery = searchBar.value.trim();
+    if(searchQuery){
+      form.action=`/dresscards/i/${searchQuery}`;
+      form.submit();
+    }else{
+      alert('Please enter a search term.');
+    }
+  })
+</script>

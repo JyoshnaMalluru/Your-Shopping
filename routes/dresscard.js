@@ -14,21 +14,18 @@ router
     .get(wrapAsync(dresscardController.sort))
     .get(wrapAsync(dresscardController.index))
     .post(isLoggedIn,upload.single('dresscard[image]'),validateDressCard,wrapAsync(dresscardController.create));
-   
-//New route
 
 router.get("/new",isLoggedIn,wrapAsync(dresscardController.new));
 router.get("/category/:category",wrapAsync(dresscardController.category));
 router.get("/search/:title",wrapAsync(dresscardController.search));
 router.get("/wishlist",wrapAsync(dresscardController.wishlist));
+router.get("/i/:value",wrapAsync(dresscardController.output));
 router
     .route("/:id")
     .get(wrapAsync(dresscardController.show))
     .put(isLoggedIn,isOwner,upload.single('dresscard[image]'),validateDressCard,wrapAsync(dresscardController.update))
     .delete(isLoggedIn,isOwner,wrapAsync(dresscardController.delete));
 
-// Edit Route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(dresscardController.edit));
 router.put("/:id/wishlist",wrapAsync(dresscardController.addlike));
-
 module.exports = router;

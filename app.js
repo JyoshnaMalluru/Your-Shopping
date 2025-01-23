@@ -48,9 +48,6 @@ const sessionOptions ={
         httpOnly:true,
     }
 }
-// app.get("/",(req,res)=>{
-//     res.send("Hi,I am root");
-// })
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -64,31 +61,12 @@ app.use((req,res,next)=>{
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     res.locals.currUser = req.user;
-    // console.log(res.locals.success)
     next();
 })
 
-// app.get("/demouser",async(req,res)=>{
-//     let fakeUser = new User({
-//         email : "student@gmail.com",
-//         username :"Jyoshna"
-//     });
-//     let registeredUser = await User.register(fakeUser,"helloworld");
-//     res.send(registeredUser);
-// })
 app.use("/dresscards",dresscardsRouter);
 app.use("/",userRouter);
 
-// app.get("/testDressCard",async(req,res)=>{
-//     let sampleDressCard = new DressCard({
-//         title : "Kurti",
-//         category : "women",
-//         price : 500
-//     });
-//     await sampleDressCard.save();
-//     console.log("sample DressCard was saved");
-//     res.send("successful testing");
-// })
 app.all("*",(req,res,next) =>{
     next(new ExpressError(404,"Page Not Found!"));
 });
@@ -96,7 +74,6 @@ app.all("*",(req,res,next) =>{
 app.use((err,req,res,next)=>{
     let{statusCode=500,message="Something Went Wrong"} = err;
     res.status(statusCode).render("error.ejs",{message})
-    // res.status(statusCode).send(message);
 })
 app.listen(8080,()=> {
     console.log("server is listening to port");
