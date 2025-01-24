@@ -1,5 +1,4 @@
 const DressCard = require("../models/dresscard.js");
-const flash = require("connect-flash");
 
 module.exports.index = async(req,res,next)=> {
     const allDressCards = await DressCard.find({});
@@ -32,21 +31,23 @@ module.exports.addlike = async (req, res) => {
     try {
         const dresscard = await DressCard.findById(id);
         if (!dresscard) {
-            return res.status(404).json({ success: false, message: "Dress card not found" });
+            req.flash("error", "Dress card not found");
+            return res.redirect('/dresscards');
         }
+        dresscard.like = !dresscard.like;
+        await dresscard.save();
         if (dresscard.like) {
-            dresscard.like = false;
-            await dresscard.save();
-            req.flash("error", "Removed from Wishlist!");
-        } else {
-            dresscard.like = true;
-            await dresscard.save();
             req.flash("success", "Added to Wishlist!");
+        } else {
+            req.flash("error", "Removed from Wishlist!");
         }
+        console.log("Success Flash:", req.flash("success")); 
+        console.log("Error Flash:", req.flash("error"));  
         res.redirect('/dresscards');
     } catch (error) {
         console.error("Error updating like:", error);
-        res.status(500).json({ success: false, message: "Internal server error" });
+        req.flash("error", "Something went wrong.");
+        res.redirect('/dresscards');
     }
 };
 

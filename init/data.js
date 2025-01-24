@@ -73,10 +73,10 @@ const sampleDressCards = [
             title: "gown",
             image : {
                 filename : "dresscardimage",
-                url :  "https://s.alicdn.com/@sc04/kf/H3dfb69721fdc40b3b558d34b1c1e779bR.jpg_300x300.jpg",
+                url :  "https://images-na.ssl-images-amazon.com/images/I/71G%2BiGwVtaL._AC_UL1200_.jpg",
             }, 
             category: "girl",
-            price: 1800,
+            price: 800,
             like : false
         },
         {
@@ -123,14 +123,14 @@ const sampleDressCards = [
             title: "jacket",
             image : {
                 filename : "dresscardimage",
-                url :  "https://www.jeanswholesaler.in/2632-large_default/royal-spider-brown-pure-leather-jacket-for-men-rs-l004.jpg",
+                url :  "https://th.bing.com/th/id/OIP.FnRaggixxNa2kLroh8BFzgAAAA?rs=1&pid=ImgDetMain",
             },
             category: "men",
             price: 3500,
             like : false
         },
         {
-            title: "dress",
+            title: "gown",
             image : {
                 filename : "dresscardimage",
                 url :  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEzqKhKIccPkHphnWKKte4N47nh-IRyhT0w&s",
@@ -170,7 +170,7 @@ const sampleDressCards = [
             like : false
         },
         {
-            title: "dress",
+            title: "gown",
             image : {
                 filename : "dresscardimage",
                 url :  "https://softsensbaby.com/cdn/shop/files/1_a6af9a33-b847-40d7-a8c6-476651aa13ab_300x300.jpg?v=1717499568",
@@ -293,9 +293,9 @@ const sampleDressCards = [
             title: "dress",
             image : {
                 filename : "dresscardimage",
-                url : "https://ae01.alicdn.com/kf/Sed944b1f8a0f4532b76b4e4dd04e222bR/Princess-Evening-Luxurious-Party-Dress-for-Girls-Kids-Outfit-Sequin-Short-Sleeve-Ball-Gown-Children-Infant.jpg",
+                url : "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2Ffa%2F03fae54c1c46f35a89705f4f4fc6c9de4376db3c.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
             },
-            category: "girl",
+            category: "women",
             price: 1600,
             like : false
         },

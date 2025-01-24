@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const DressCard = require("../models/dresscard.js");
 const initData = require("./data.js");
-
-const MONGO_URL = "mongodb://127.0.0.1:27017/shop";
+require('dotenv').config({ path: '../.env' });
+const MONGO_URL = `mongodb+srv://jyoshna1595:${process.env.CLOUD_DBPASSWORD}@cluster0.bcjsm.mongodb.net/`;
 main()
     .then(()=>{
         console.log("Connected to DB");
@@ -16,7 +16,7 @@ async function main(){
 
 const initDB= async() => {
     await DressCard.deleteMany({});
-    initData.data = initData.data.map((obj)=>({...obj, owner:"67266171cc448c71da3fb466",}));
+    initData.data = initData.data.map((obj)=>({...obj, owner:"67937944298c01f4a0a69521",}));
     await DressCard.insertMany(initData.data);
     console.log("Data was initialized");
 }
