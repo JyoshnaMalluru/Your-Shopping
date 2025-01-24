@@ -18,18 +18,26 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js")
 const dresscardsRouter = require("./routes/dresscard.js");
 const userRouter = require("./routes/user.js")
+const MongoStore = require("connect-mongo");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/shop";
-main()
-    .then(()=>{
-        console.log("Connected to DB");
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-async function main(){
-    await mongoose.connect(MONGO_URL);
-}
+// const MONGO_URL = "mongodb://127.0.0.1:27017/shop";
+const MONGO_URL = `mongodb+srv://jyoshna1595:${process.env.CLOUD_DBPASSWORD}@cluster0.bcjsm.mongodb.net/`
+// main()
+//     .then(()=>{
+//         console.log("Connected to DB");
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+// async function main(){
+//     await mongoose.connect(MONGO_URL);
+// }
+mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -39,14 +47,24 @@ app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.static(path.join(__dirname,"/images")));
 const sessionOptions ={
-    secret:"mysupersecretcode",
-    resave:false,
-    saveUninitialized: true,
-    cookie:{
-        expires: Date.now()+7*24*60*60*1000,
-        maxage:7*24*60*60*1000,
-        httpOnly:true,
-    }
+    // secret:"mysupersecretcode",
+    // resave:false,
+    // saveUninitialized: true,
+    // cookie:{
+    //     expires: Date.now()+7*24*60*60*1000,
+    //     maxage:7*24*60*60*1000,
+    //     // httpOnly:true,
+    // }
+    secret: "mysupersecretcode",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: MONGO_URL, // Use the same MongoDB URI
+    }),
+    cookie: {
+      secure: false, // Set to true if using HTTPS
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+    },
 }
 
 app.use(session(sessionOptions));
